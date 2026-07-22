@@ -1,0 +1,21 @@
+# Python virtual environments
+.venv/
+
+# Python-generated files
+__pycache__/
+*.pyc
+
+# Large or generated datasets
+data/raw/
+data/processed/
+
+# Trained models
+*.pt
+*.pth
+
+# Editor files
+.vscode/
+.idea/
+
+# Notebook temporary files
+.ipynb_checkpoints/
