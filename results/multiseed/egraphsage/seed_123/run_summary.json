@@ -1,0 +1,23 @@
+{
+    "model": "egraphsage",
+    "seed": 123,
+    "best_epoch": 337,
+    "best_validation_f1": 0.9907529722589168,
+    "test_accuracy": 0.9833277759253084,
+    "test_precision": 0.9695398574206092,
+    "test_recall": 0.9979986657771848,
+    "test_f1": 0.9835634451019066,
+    "confusion_matrix": [
+        [
+            1453,
+            47
+        ],
+        [
+            3,
+            1496
+        ]
+    ],
+    "test_evaluations": 1,
+    "restored_best_checkpoint_verified": true,
+    "best_weights_sha256": "41bbe703395355c847c2cfa30b5c0ad473bacc8d5bb084c81c4d4e2679c29fa0"
+}

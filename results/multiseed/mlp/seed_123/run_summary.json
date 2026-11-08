@@ -1,0 +1,23 @@
+{
+    "model": "mlp",
+    "seed": 123,
+    "best_epoch": 25,
+    "best_validation_f1": 0.9818541735400858,
+    "test_accuracy": 0.9779926642214072,
+    "test_precision": 0.9637540453074434,
+    "test_recall": 0.9933288859239493,
+    "test_f1": 0.9783180026281209,
+    "confusion_matrix": [
+        [
+            1444,
+            56
+        ],
+        [
+            10,
+            1489
+        ]
+    ],
+    "test_evaluations": 1,
+    "restored_best_checkpoint_verified": true,
+    "best_weights_sha256": "6cacd904b512abafa6d86fef2a4c87905f26326d5543fbc0d5a94ed3759fd04f"
+}

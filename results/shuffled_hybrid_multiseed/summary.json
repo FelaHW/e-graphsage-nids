@@ -1,0 +1,1316 @@
+{
+    "seeds": [
+        42,
+        7,
+        21,
+        84,
+        123
+    ],
+    "runs": [
+        {
+            "model": "shuffled_hybrid_egraphsage",
+            "seed": 42,
+            "best_epoch": 490,
+            "best_validation_f1": 0.9864462809917356,
+            "test_accuracy": 0.9823274424808269,
+            "test_precision": 0.9700910273081924,
+            "test_recall": 0.9953302201467645,
+            "test_f1": 0.9825485676654593,
+            "test_loss": 0.06992679089307785,
+            "confusion_matrix": [
+                [
+                    1454,
+                    46
+                ],
+                [
+                    7,
+                    1492
+                ]
+            ],
+            "subgroups": {
+                "both_endpoints_empty": {
+                    "edges": 800,
+                    "label_counts": [
+                        622,
+                        178
+                    ],
+                    "accuracy": 0.99,
+                    "precision": 0.967032967032967,
+                    "recall": 0.9887640449438202,
+                    "f1": 0.9777777777777777,
+                    "confusion_matrix": [
+                        [
+                            616,
+                            6
+                        ],
+                        [
+                            2,
+                            176
+                        ]
+                    ]
+                },
+                "at_least_one_nonempty": {
+                    "edges": 2199,
+                    "label_counts": [
+                        878,
+                        1321
+                    ],
+                    "accuracy": 0.9795361527967258,
+                    "precision": 0.9705014749262537,
+                    "recall": 0.9962149886449659,
+                    "f1": 0.9831901382144191,
+                    "confusion_matrix": [
+                        [
+                            838,
+                            40
+                        ],
+                        [
+                            5,
+                            1316
+                        ]
+                    ]
+                }
+            },
+            "parameter_count": 3442,
+            "model_configuration": {
+                "node_feature_size": 8,
+                "edge_feature_size": 8,
+                "hidden_size": 32,
+                "classifier_hidden_size_1": 32,
+                "classifier_hidden_size_2": 16,
+                "number_of_classes": 2
+            },
+            "test_evaluations": 1,
+            "test_forward_passes": 1,
+            "restored_best_checkpoint_verified": true,
+            "best_weights_sha256": "35cb59260c294a4cc2f018d1a391a4e93fed3329ad0c7f6ae42b649a512e6d18",
+            "graphs": {
+                "train": {
+                    "nodes": 16460,
+                    "edges": 13995,
+                    "edge_index_shape": [
+                        2,
+                        13995
+                    ],
+                    "edge_attr_shape": [
+                        13995,
+                        8
+                    ],
+                    "edge_y_shape": [
+                        13995
+                    ],
+                    "label_counts": [
+                        6998,
+                        6997
+                    ]
+                },
+                "validation": {
+                    "nodes": 3730,
+                    "edges": 2999,
+                    "edge_index_shape": [
+                        2,
+                        2999
+                    ],
+                    "edge_attr_shape": [
+                        2999,
+                        8
+                    ],
+                    "edge_y_shape": [
+                        2999
+                    ],
+                    "label_counts": [
+                        1499,
+                        1500
+                    ]
+                },
+                "test": {
+                    "nodes": 3771,
+                    "edges": 2999,
+                    "edge_index_shape": [
+                        2,
+                        2999
+                    ],
+                    "edge_attr_shape": [
+                        2999,
+                        8
+                    ],
+                    "edge_y_shape": [
+                        2999
+                    ],
+                    "label_counts": [
+                        1500,
+                        1499
+                    ]
+                }
+            },
+            "evaluation_protocol": {
+                "target_features_directly_available": true,
+                "target_specific_endpoint_embeddings": true,
+                "labels_used_as_model_inputs": false,
+                "other_same_split_edges_in_aggregation": true,
+                "cross_split_aggregation": false,
+                "subgroup_metrics_reuse_test_logits": true,
+                "style": "batch/transductive-style, not real-time causal IDS",
+                "context_source_and_destination_shuffled_together": true,
+                "direct_target_features_shuffled": false,
+                "labels_shuffled": false,
+                "donor_context_excludes_its_original_target": true,
+                "recipient_explicitly_removed_from_donor_context": false,
+                "fixed_context_assignment_across_epochs": true,
+                "subgroups_use_original_recipient_context_availability": true
+            },
+            "permutations": {
+                "train": {
+                    "edges": 13995,
+                    "permutation_seed": 5049498410478955133,
+                    "fixed_points": 0,
+                    "permutation_sha256": "19b95b45d5a45a5f86975037a84d4533f812e615949b88ba8ed13272afd59877",
+                    "original_both_empty": 3342,
+                    "assigned_both_empty": 3342,
+                    "availability_transitions": {
+                        "empty_to_empty": 765,
+                        "empty_to_nonempty": 2577,
+                        "nonempty_to_empty": 2577,
+                        "nonempty_to_nonempty": 8076
+                    },
+                    "recipient_shares_endpoint_with_donor": 88
+                },
+                "validation": {
+                    "edges": 2999,
+                    "permutation_seed": 2844398049805822896,
+                    "fixed_points": 0,
+                    "permutation_sha256": "b695925d392a8bd0bf2fca63ebd81035f5138d8688c4888c03ae570cb3812d7a",
+                    "original_both_empty": 766,
+                    "assigned_both_empty": 766,
+                    "availability_transitions": {
+                        "empty_to_empty": 187,
+                        "empty_to_nonempty": 579,
+                        "nonempty_to_empty": 579,
+                        "nonempty_to_nonempty": 1654
+                    },
+                    "recipient_shares_endpoint_with_donor": 13
+                },
+                "test": {
+                    "edges": 2999,
+                    "permutation_seed": 8402392730569708536,
+                    "fixed_points": 0,
+                    "permutation_sha256": "036074fec2e569cf467a292fb9025c73aac01c8f61160ddcddd151261c34b3b9",
+                    "original_both_empty": 800,
+                    "assigned_both_empty": 800,
+                    "availability_transitions": {
+                        "empty_to_empty": 203,
+                        "empty_to_nonempty": 597,
+                        "nonempty_to_empty": 597,
+                        "nonempty_to_nonempty": 1602
+                    },
+                    "recipient_shares_endpoint_with_donor": 23
+                }
+            },
+            "fixed_points": {
+                "train": 0,
+                "validation": 0,
+                "test": 0
+            }
+        },
+        {
+            "model": "shuffled_hybrid_egraphsage",
+            "seed": 7,
+            "best_epoch": 496,
+            "best_validation_f1": 0.9844525305987429,
+            "test_accuracy": 0.9816605535178393,
+            "test_precision": 0.970664928292047,
+            "test_recall": 0.9933288859239493,
+            "test_f1": 0.9818661391361688,
+            "test_loss": 0.07507187128067017,
+            "confusion_matrix": [
+                [
+                    1455,
+                    45
+                ],
+                [
+                    10,
+                    1489
+                ]
+            ],
+            "subgroups": {
+                "both_endpoints_empty": {
+                    "edges": 800,
+                    "label_counts": [
+                        622,
+                        178
+                    ],
+                    "accuracy": 0.9875,
+                    "precision": 0.9666666666666667,
+                    "recall": 0.9775280898876404,
+                    "f1": 0.9720670391061452,
+                    "confusion_matrix": [
+                        [
+                            616,
+                            6
+                        ],
+                        [
+                            4,
+                            174
+                        ]
+                    ]
+                },
+                "at_least_one_nonempty": {
+                    "edges": 2199,
+                    "label_counts": [
+                        878,
+                        1321
+                    ],
+                    "accuracy": 0.9795361527967258,
+                    "precision": 0.9711964549483013,
+                    "recall": 0.9954579863739591,
+                    "f1": 0.983177570093458,
+                    "confusion_matrix": [
+                        [
+                            839,
+                            39
+                        ],
+                        [
+                            6,
+                            1315
+                        ]
+                    ]
+                }
+            },
+            "parameter_count": 3442,
+            "model_configuration": {
+                "node_feature_size": 8,
+                "edge_feature_size": 8,
+                "hidden_size": 32,
+                "classifier_hidden_size_1": 32,
+                "classifier_hidden_size_2": 16,
+                "number_of_classes": 2
+            },
+            "test_evaluations": 1,
+            "test_forward_passes": 1,
+            "restored_best_checkpoint_verified": true,
+            "best_weights_sha256": "a709a4797ff60ec19095cab6b1cbafeee262e64cb165a15afc9054bcb28c7640",
+            "graphs": {
+                "train": {
+                    "nodes": 16460,
+                    "edges": 13995,
+                    "edge_index_shape": [
+                        2,
+                        13995
+                    ],
+                    "edge_attr_shape": [
+                        13995,
+                        8
+                    ],
+                    "edge_y_shape": [
+                        13995
+                    ],
+                    "label_counts": [
+                        6998,
+                        6997
+                    ]
+                },
+                "validation": {
+                    "nodes": 3730,
+                    "edges": 2999,
+                    "edge_index_shape": [
+                        2,
+                        2999
+                    ],
+                    "edge_attr_shape": [
+                        2999,
+                        8
+                    ],
+                    "edge_y_shape": [
+                        2999
+                    ],
+                    "label_counts": [
+                        1499,
+                        1500
+                    ]
+                },
+                "test": {
+                    "nodes": 3771,
+                    "edges": 2999,
+                    "edge_index_shape": [
+                        2,
+                        2999
+                    ],
+                    "edge_attr_shape": [
+                        2999,
+                        8
+                    ],
+                    "edge_y_shape": [
+                        2999
+                    ],
+                    "label_counts": [
+                        1500,
+                        1499
+                    ]
+                }
+            },
+            "evaluation_protocol": {
+                "target_features_directly_available": true,
+                "target_specific_endpoint_embeddings": true,
+                "labels_used_as_model_inputs": false,
+                "other_same_split_edges_in_aggregation": true,
+                "cross_split_aggregation": false,
+                "subgroup_metrics_reuse_test_logits": true,
+                "style": "batch/transductive-style, not real-time causal IDS",
+                "context_source_and_destination_shuffled_together": true,
+                "direct_target_features_shuffled": false,
+                "labels_shuffled": false,
+                "donor_context_excludes_its_original_target": true,
+                "recipient_explicitly_removed_from_donor_context": false,
+                "fixed_context_assignment_across_epochs": true,
+                "subgroups_use_original_recipient_context_availability": true
+            },
+            "permutations": {
+                "train": {
+                    "edges": 13995,
+                    "permutation_seed": 3499008079987950159,
+                    "fixed_points": 0,
+                    "permutation_sha256": "0446d97f47594a7d93f33dbc1ed558dc22862787dcc67217c91a45fb3fcb4f1b",
+                    "original_both_empty": 3342,
+                    "assigned_both_empty": 3342,
+                    "availability_transitions": {
+                        "empty_to_empty": 765,
+                        "empty_to_nonempty": 2577,
+                        "nonempty_to_empty": 2577,
+                        "nonempty_to_nonempty": 8076
+                    },
+                    "recipient_shares_endpoint_with_donor": 95
+                },
+                "validation": {
+                    "edges": 2999,
+                    "permutation_seed": 7555195866448300945,
+                    "fixed_points": 0,
+                    "permutation_sha256": "a8f23df097485ae3791f4081a79392e3fb5e17e4c675c4d121e5330639e19cb0",
+                    "original_both_empty": 766,
+                    "assigned_both_empty": 766,
+                    "availability_transitions": {
+                        "empty_to_empty": 194,
+                        "empty_to_nonempty": 572,
+                        "nonempty_to_empty": 572,
+                        "nonempty_to_nonempty": 1661
+                    },
+                    "recipient_shares_endpoint_with_donor": 12
+                },
+                "test": {
+                    "edges": 2999,
+                    "permutation_seed": 3733030510152362457,
+                    "fixed_points": 0,
+                    "permutation_sha256": "e55340214d11174f5fd75f64dd06854442a068f216e59d2099c01ff039348ddf",
+                    "original_both_empty": 800,
+                    "assigned_both_empty": 800,
+                    "availability_transitions": {
+                        "empty_to_empty": 217,
+                        "empty_to_nonempty": 583,
+                        "nonempty_to_empty": 583,
+                        "nonempty_to_nonempty": 1616
+                    },
+                    "recipient_shares_endpoint_with_donor": 17
+                }
+            },
+            "fixed_points": {
+                "train": 0,
+                "validation": 0,
+                "test": 0
+            }
+        },
+        {
+            "model": "shuffled_hybrid_egraphsage",
+            "seed": 21,
+            "best_epoch": 445,
+            "best_validation_f1": 0.9844833278309674,
+            "test_accuracy": 0.9813271090363455,
+            "test_precision": 0.9688109161793372,
+            "test_recall": 0.9946631087391594,
+            "test_f1": 0.9815668202764977,
+            "test_loss": 0.08179276436567307,
+            "confusion_matrix": [
+                [
+                    1452,
+                    48
+                ],
+                [
+                    8,
+                    1491
+                ]
+            ],
+            "subgroups": {
+                "both_endpoints_empty": {
+                    "edges": 800,
+                    "label_counts": [
+                        622,
+                        178
+                    ],
+                    "accuracy": 0.99125,
+                    "precision": 0.9723756906077348,
+                    "recall": 0.9887640449438202,
+                    "f1": 0.9805013927576601,
+                    "confusion_matrix": [
+                        [
+                            617,
+                            5
+                        ],
+                        [
+                            2,
+                            176
+                        ]
+                    ]
+                },
+                "at_least_one_nonempty": {
+                    "edges": 2199,
+                    "label_counts": [
+                        878,
+                        1321
+                    ],
+                    "accuracy": 0.9777171441564347,
+                    "precision": 0.9683357879234168,
+                    "recall": 0.9954579863739591,
+                    "f1": 0.9817095931317655,
+                    "confusion_matrix": [
+                        [
+                            835,
+                            43
+                        ],
+                        [
+                            6,
+                            1315
+                        ]
+                    ]
+                }
+            },
+            "parameter_count": 3442,
+            "model_configuration": {
+                "node_feature_size": 8,
+                "edge_feature_size": 8,
+                "hidden_size": 32,
+                "classifier_hidden_size_1": 32,
+                "classifier_hidden_size_2": 16,
+                "number_of_classes": 2
+            },
+            "test_evaluations": 1,
+            "test_forward_passes": 1,
+            "restored_best_checkpoint_verified": true,
+            "best_weights_sha256": "e0d7aafc0d2c626266517df8faf8a964a8dce0eebebeb0d12a33846e534ebf75",
+            "graphs": {
+                "train": {
+                    "nodes": 16460,
+                    "edges": 13995,
+                    "edge_index_shape": [
+                        2,
+                        13995
+                    ],
+                    "edge_attr_shape": [
+                        13995,
+                        8
+                    ],
+                    "edge_y_shape": [
+                        13995
+                    ],
+                    "label_counts": [
+                        6998,
+                        6997
+                    ]
+                },
+                "validation": {
+                    "nodes": 3730,
+                    "edges": 2999,
+                    "edge_index_shape": [
+                        2,
+                        2999
+                    ],
+                    "edge_attr_shape": [
+                        2999,
+                        8
+                    ],
+                    "edge_y_shape": [
+                        2999
+                    ],
+                    "label_counts": [
+                        1499,
+                        1500
+                    ]
+                },
+                "test": {
+                    "nodes": 3771,
+                    "edges": 2999,
+                    "edge_index_shape": [
+                        2,
+                        2999
+                    ],
+                    "edge_attr_shape": [
+                        2999,
+                        8
+                    ],
+                    "edge_y_shape": [
+                        2999
+                    ],
+                    "label_counts": [
+                        1500,
+                        1499
+                    ]
+                }
+            },
+            "evaluation_protocol": {
+                "target_features_directly_available": true,
+                "target_specific_endpoint_embeddings": true,
+                "labels_used_as_model_inputs": false,
+                "other_same_split_edges_in_aggregation": true,
+                "cross_split_aggregation": false,
+                "subgroup_metrics_reuse_test_logits": true,
+                "style": "batch/transductive-style, not real-time causal IDS",
+                "context_source_and_destination_shuffled_together": true,
+                "direct_target_features_shuffled": false,
+                "labels_shuffled": false,
+                "donor_context_excludes_its_original_target": true,
+                "recipient_explicitly_removed_from_donor_context": false,
+                "fixed_context_assignment_across_epochs": true,
+                "subgroups_use_original_recipient_context_availability": true
+            },
+            "permutations": {
+                "train": {
+                    "edges": 13995,
+                    "permutation_seed": 4718705271246626068,
+                    "fixed_points": 0,
+                    "permutation_sha256": "e199d0d8f1c31b156ea081b38e670df86c520cc3820334ba6dd1df48603b6f24",
+                    "original_both_empty": 3342,
+                    "assigned_both_empty": 3342,
+                    "availability_transitions": {
+                        "empty_to_empty": 821,
+                        "empty_to_nonempty": 2521,
+                        "nonempty_to_empty": 2521,
+                        "nonempty_to_nonempty": 8132
+                    },
+                    "recipient_shares_endpoint_with_donor": 101
+                },
+                "validation": {
+                    "edges": 2999,
+                    "permutation_seed": 6231008789731491577,
+                    "fixed_points": 0,
+                    "permutation_sha256": "bf1ad4362eb6a18517bb8884207a57de73bffdb6c556ab1e6dc0ebb2854dfc01",
+                    "original_both_empty": 766,
+                    "assigned_both_empty": 766,
+                    "availability_transitions": {
+                        "empty_to_empty": 208,
+                        "empty_to_nonempty": 558,
+                        "nonempty_to_empty": 558,
+                        "nonempty_to_nonempty": 1675
+                    },
+                    "recipient_shares_endpoint_with_donor": 33
+                },
+                "test": {
+                    "edges": 2999,
+                    "permutation_seed": 8303446217835656576,
+                    "fixed_points": 0,
+                    "permutation_sha256": "cfbeefbe56785aee2abe124524380d39304da34d317ceaa92cc2708922dfe5ae",
+                    "original_both_empty": 800,
+                    "assigned_both_empty": 800,
+                    "availability_transitions": {
+                        "empty_to_empty": 216,
+                        "empty_to_nonempty": 584,
+                        "nonempty_to_empty": 584,
+                        "nonempty_to_nonempty": 1615
+                    },
+                    "recipient_shares_endpoint_with_donor": 19
+                }
+            },
+            "fixed_points": {
+                "train": 0,
+                "validation": 0,
+                "test": 0
+            }
+        },
+        {
+            "model": "shuffled_hybrid_egraphsage",
+            "seed": 84,
+            "best_epoch": 273,
+            "best_validation_f1": 0.9820836098208361,
+            "test_accuracy": 0.9813271090363455,
+            "test_precision": 0.9718770438194899,
+            "test_recall": 0.9913275517011341,
+            "test_f1": 0.9815059445178336,
+            "test_loss": 0.08056128770112991,
+            "confusion_matrix": [
+                [
+                    1457,
+                    43
+                ],
+                [
+                    13,
+                    1486
+                ]
+            ],
+            "subgroups": {
+                "both_endpoints_empty": {
+                    "edges": 800,
+                    "label_counts": [
+                        622,
+                        178
+                    ],
+                    "accuracy": 0.9925,
+                    "precision": 0.967391304347826,
+                    "recall": 1.0,
+                    "f1": 0.9834254143646409,
+                    "confusion_matrix": [
+                        [
+                            616,
+                            6
+                        ],
+                        [
+                            0,
+                            178
+                        ]
+                    ]
+                },
+                "at_least_one_nonempty": {
+                    "edges": 2199,
+                    "label_counts": [
+                        878,
+                        1321
+                    ],
+                    "accuracy": 0.977262391996362,
+                    "precision": 0.9724907063197026,
+                    "recall": 0.9901589704769115,
+                    "f1": 0.981245311327832,
+                    "confusion_matrix": [
+                        [
+                            841,
+                            37
+                        ],
+                        [
+                            13,
+                            1308
+                        ]
+                    ]
+                }
+            },
+            "parameter_count": 3442,
+            "model_configuration": {
+                "node_feature_size": 8,
+                "edge_feature_size": 8,
+                "hidden_size": 32,
+                "classifier_hidden_size_1": 32,
+                "classifier_hidden_size_2": 16,
+                "number_of_classes": 2
+            },
+            "test_evaluations": 1,
+            "test_forward_passes": 1,
+            "restored_best_checkpoint_verified": true,
+            "best_weights_sha256": "69021dcbd5b2cc43a8b92b4b5a55d8aa28404f079eb1ac48755fcc1edafa612a",
+            "graphs": {
+                "train": {
+                    "nodes": 16460,
+                    "edges": 13995,
+                    "edge_index_shape": [
+                        2,
+                        13995
+                    ],
+                    "edge_attr_shape": [
+                        13995,
+                        8
+                    ],
+                    "edge_y_shape": [
+                        13995
+                    ],
+                    "label_counts": [
+                        6998,
+                        6997
+                    ]
+                },
+                "validation": {
+                    "nodes": 3730,
+                    "edges": 2999,
+                    "edge_index_shape": [
+                        2,
+                        2999
+                    ],
+                    "edge_attr_shape": [
+                        2999,
+                        8
+                    ],
+                    "edge_y_shape": [
+                        2999
+                    ],
+                    "label_counts": [
+                        1499,
+                        1500
+                    ]
+                },
+                "test": {
+                    "nodes": 3771,
+                    "edges": 2999,
+                    "edge_index_shape": [
+                        2,
+                        2999
+                    ],
+                    "edge_attr_shape": [
+                        2999,
+                        8
+                    ],
+                    "edge_y_shape": [
+                        2999
+                    ],
+                    "label_counts": [
+                        1500,
+                        1499
+                    ]
+                }
+            },
+            "evaluation_protocol": {
+                "target_features_directly_available": true,
+                "target_specific_endpoint_embeddings": true,
+                "labels_used_as_model_inputs": false,
+                "other_same_split_edges_in_aggregation": true,
+                "cross_split_aggregation": false,
+                "subgroup_metrics_reuse_test_logits": true,
+                "style": "batch/transductive-style, not real-time causal IDS",
+                "context_source_and_destination_shuffled_together": true,
+                "direct_target_features_shuffled": false,
+                "labels_shuffled": false,
+                "donor_context_excludes_its_original_target": true,
+                "recipient_explicitly_removed_from_donor_context": false,
+                "fixed_context_assignment_across_epochs": true,
+                "subgroups_use_original_recipient_context_availability": true
+            },
+            "permutations": {
+                "train": {
+                    "edges": 13995,
+                    "permutation_seed": 7552288690412351916,
+                    "fixed_points": 0,
+                    "permutation_sha256": "9f158a727576dd338d9a48a8882d7fe45eac051409d5b040f75ade6fd7de0fe7",
+                    "original_both_empty": 3342,
+                    "assigned_both_empty": 3342,
+                    "availability_transitions": {
+                        "empty_to_empty": 816,
+                        "empty_to_nonempty": 2526,
+                        "nonempty_to_empty": 2526,
+                        "nonempty_to_nonempty": 8127
+                    },
+                    "recipient_shares_endpoint_with_donor": 89
+                },
+                "validation": {
+                    "edges": 2999,
+                    "permutation_seed": 6487020181456836332,
+                    "fixed_points": 0,
+                    "permutation_sha256": "793e7103942d213b7aa6456e063cfb78218d25793660ab6b746fe44338bf14dd",
+                    "original_both_empty": 766,
+                    "assigned_both_empty": 766,
+                    "availability_transitions": {
+                        "empty_to_empty": 197,
+                        "empty_to_nonempty": 569,
+                        "nonempty_to_empty": 569,
+                        "nonempty_to_nonempty": 1664
+                    },
+                    "recipient_shares_endpoint_with_donor": 17
+                },
+                "test": {
+                    "edges": 2999,
+                    "permutation_seed": 5216942351263212336,
+                    "fixed_points": 0,
+                    "permutation_sha256": "77a4fd141db674a8f9985f0323a53d7423278310af509cbc33493847609e6049",
+                    "original_both_empty": 800,
+                    "assigned_both_empty": 800,
+                    "availability_transitions": {
+                        "empty_to_empty": 228,
+                        "empty_to_nonempty": 572,
+                        "nonempty_to_empty": 572,
+                        "nonempty_to_nonempty": 1627
+                    },
+                    "recipient_shares_endpoint_with_donor": 19
+                }
+            },
+            "fixed_points": {
+                "train": 0,
+                "validation": 0,
+                "test": 0
+            }
+        },
+        {
+            "model": "shuffled_hybrid_egraphsage",
+            "seed": 123,
+            "best_epoch": 463,
+            "best_validation_f1": 0.986437313926563,
+            "test_accuracy": 0.9819939979993331,
+            "test_precision": 0.9712981082844097,
+            "test_recall": 0.9933288859239493,
+            "test_f1": 0.9821899736147758,
+            "test_loss": 0.08155932277441025,
+            "confusion_matrix": [
+                [
+                    1456,
+                    44
+                ],
+                [
+                    10,
+                    1489
+                ]
+            ],
+            "subgroups": {
+                "both_endpoints_empty": {
+                    "edges": 800,
+                    "label_counts": [
+                        622,
+                        178
+                    ],
+                    "accuracy": 0.9925,
+                    "precision": 0.9777777777777777,
+                    "recall": 0.9887640449438202,
+                    "f1": 0.9832402234636871,
+                    "confusion_matrix": [
+                        [
+                            618,
+                            4
+                        ],
+                        [
+                            2,
+                            176
+                        ]
+                    ]
+                },
+                "at_least_one_nonempty": {
+                    "edges": 2199,
+                    "label_counts": [
+                        878,
+                        1321
+                    ],
+                    "accuracy": 0.9781718963165075,
+                    "precision": 0.9704360679970436,
+                    "recall": 0.9939439818319455,
+                    "f1": 0.9820493642483171,
+                    "confusion_matrix": [
+                        [
+                            838,
+                            40
+                        ],
+                        [
+                            8,
+                            1313
+                        ]
+                    ]
+                }
+            },
+            "parameter_count": 3442,
+            "model_configuration": {
+                "node_feature_size": 8,
+                "edge_feature_size": 8,
+                "hidden_size": 32,
+                "classifier_hidden_size_1": 32,
+                "classifier_hidden_size_2": 16,
+                "number_of_classes": 2
+            },
+            "test_evaluations": 1,
+            "test_forward_passes": 1,
+            "restored_best_checkpoint_verified": true,
+            "best_weights_sha256": "d1d8b5ef6521797185f273bf9d9f5448623609346eb4b650b8cef8bd12d1646d",
+            "graphs": {
+                "train": {
+                    "nodes": 16460,
+                    "edges": 13995,
+                    "edge_index_shape": [
+                        2,
+                        13995
+                    ],
+                    "edge_attr_shape": [
+                        13995,
+                        8
+                    ],
+                    "edge_y_shape": [
+                        13995
+                    ],
+                    "label_counts": [
+                        6998,
+                        6997
+                    ]
+                },
+                "validation": {
+                    "nodes": 3730,
+                    "edges": 2999,
+                    "edge_index_shape": [
+                        2,
+                        2999
+                    ],
+                    "edge_attr_shape": [
+                        2999,
+                        8
+                    ],
+                    "edge_y_shape": [
+                        2999
+                    ],
+                    "label_counts": [
+                        1499,
+                        1500
+                    ]
+                },
+                "test": {
+                    "nodes": 3771,
+                    "edges": 2999,
+                    "edge_index_shape": [
+                        2,
+                        2999
+                    ],
+                    "edge_attr_shape": [
+                        2999,
+                        8
+                    ],
+                    "edge_y_shape": [
+                        2999
+                    ],
+                    "label_counts": [
+                        1500,
+                        1499
+                    ]
+                }
+            },
+            "evaluation_protocol": {
+                "target_features_directly_available": true,
+                "target_specific_endpoint_embeddings": true,
+                "labels_used_as_model_inputs": false,
+                "other_same_split_edges_in_aggregation": true,
+                "cross_split_aggregation": false,
+                "subgroup_metrics_reuse_test_logits": true,
+                "style": "batch/transductive-style, not real-time causal IDS",
+                "context_source_and_destination_shuffled_together": true,
+                "direct_target_features_shuffled": false,
+                "labels_shuffled": false,
+                "donor_context_excludes_its_original_target": true,
+                "recipient_explicitly_removed_from_donor_context": false,
+                "fixed_context_assignment_across_epochs": true,
+                "subgroups_use_original_recipient_context_availability": true
+            },
+            "permutations": {
+                "train": {
+                    "edges": 13995,
+                    "permutation_seed": 1241643154346834565,
+                    "fixed_points": 0,
+                    "permutation_sha256": "301fce7886afa2907b8a8a9e7578b2d333b0ef35d2b6cb2320cd97314d1d3a88",
+                    "original_both_empty": 3342,
+                    "assigned_both_empty": 3342,
+                    "availability_transitions": {
+                        "empty_to_empty": 813,
+                        "empty_to_nonempty": 2529,
+                        "nonempty_to_empty": 2529,
+                        "nonempty_to_nonempty": 8124
+                    },
+                    "recipient_shares_endpoint_with_donor": 93
+                },
+                "validation": {
+                    "edges": 2999,
+                    "permutation_seed": 1424461372464077615,
+                    "fixed_points": 0,
+                    "permutation_sha256": "8ff04756e8db23f2aeb3ec52cf49a4792ff08038afac4024e3e6d641d25f649e",
+                    "original_both_empty": 766,
+                    "assigned_both_empty": 766,
+                    "availability_transitions": {
+                        "empty_to_empty": 202,
+                        "empty_to_nonempty": 564,
+                        "nonempty_to_empty": 564,
+                        "nonempty_to_nonempty": 1669
+                    },
+                    "recipient_shares_endpoint_with_donor": 27
+                },
+                "test": {
+                    "edges": 2999,
+                    "permutation_seed": 5710132847492094922,
+                    "fixed_points": 0,
+                    "permutation_sha256": "fa9d21849670c3d363b98d8d6b5524bd77405e895780ab22844edcd0d83f0225",
+                    "original_both_empty": 800,
+                    "assigned_both_empty": 800,
+                    "availability_transitions": {
+                        "empty_to_empty": 212,
+                        "empty_to_nonempty": 588,
+                        "nonempty_to_empty": 588,
+                        "nonempty_to_nonempty": 1611
+                    },
+                    "recipient_shares_endpoint_with_donor": 19
+                }
+            },
+            "fixed_points": {
+                "train": 0,
+                "validation": 0,
+                "test": 0
+            }
+        }
+    ],
+    "comparison": {
+        "models": {
+            "mlp": {
+                "runs": 5,
+                "std_ddof": 1,
+                "mean_test_accuracy": 0.9769256418806269,
+                "std_test_accuracy": 0.0006833578370096549,
+                "mean_test_precision": 0.9624835118489934,
+                "std_test_precision": 0.0018746469230763168,
+                "mean_test_recall": 0.9925283522348232,
+                "std_test_recall": 0.0014462630679572235,
+                "mean_test_f1": 0.9772730932858563,
+                "std_test_f1": 0.0006562057781812033
+            },
+            "egraphsage": {
+                "runs": 5,
+                "std_ddof": 1,
+                "mean_test_accuracy": 0.9805268422807603,
+                "std_test_accuracy": 0.0022811112206051307,
+                "mean_test_precision": 0.9646586821236242,
+                "std_test_precision": 0.003606654366576734,
+                "mean_test_recall": 0.9975983989326217,
+                "std_test_recall": 0.0011162908959760627,
+                "mean_test_f1": 0.9808500095301953,
+                "std_test_f1": 0.002215177824227924
+            },
+            "loeo_egraphsage": {
+                "runs": 5,
+                "std_ddof": 1,
+                "mean_test_accuracy": 0.9093031010336778,
+                "std_test_accuracy": 0.0028195289305247865,
+                "mean_test_precision": 0.9364384241808982,
+                "std_test_precision": 0.0059278915820839394,
+                "mean_test_recall": 0.8781854569713142,
+                "std_test_recall": 0.0010117245422350241,
+                "mean_test_f1": 0.9063684098250603,
+                "std_test_f1": 0.0026159655106946125
+            },
+            "hybrid_egraphsage": {
+                "runs": 5,
+                "std_ddof": 1,
+                "mean_test_accuracy": 0.9737912637545849,
+                "std_test_accuracy": 0.00438957845515548,
+                "mean_test_precision": 0.9552964992862896,
+                "std_test_precision": 0.007281052785123138,
+                "mean_test_recall": 0.9941294196130753,
+                "std_test_recall": 0.001521248065509201,
+                "mean_test_f1": 0.9743166699201657,
+                "std_test_f1": 0.004208267058990604
+            },
+            "shuffled_hybrid_egraphsage": {
+                "runs": 5,
+                "std_ddof": 1,
+                "mean_test_accuracy": 0.981727242414138,
+                "std_test_accuracy": 0.0004347584131512102,
+                "mean_test_precision": 0.9705484047766952,
+                "std_test_precision": 0.0011799338498185744,
+                "mean_test_recall": 0.9935957304869913,
+                "std_test_recall": 0.001535805794959495,
+                "mean_test_f1": 0.981935489042147,
+                "std_test_f1": 0.0004375678126475858
+            }
+        },
+        "mean_real_minus_shuffled_f1": -0.007618819121981257,
+        "mean_shuffled_minus_mlp_f1": 0.004662395756290683,
+        "mean_real_minus_mlp_f1": -0.0029564233656905747,
+        "paired_f1_differences": [
+            {
+                "seed": 42,
+                "real_minus_shuffled": -0.00840781480130215,
+                "shuffled_minus_mlp": 0.005804381618947696,
+                "real_minus_mlp": -0.002603433182354453
+            },
+            {
+                "seed": 7,
+                "real_minus_shuffled": -0.00829354533519,
+                "shuffled_minus_mlp": 0.005183052108254205,
+                "real_minus_mlp": -0.0031104932269357954
+            },
+            {
+                "seed": 21,
+                "real_minus_shuffled": -0.013761942227717205,
+                "shuffled_minus_mlp": 0.004256724913130339,
+                "real_minus_mlp": -0.009505217314586867
+            },
+            {
+                "seed": 84,
+                "real_minus_shuffled": -0.003131108344832212,
+                "shuffled_minus_mlp": 0.004195849154466247,
+                "real_minus_mlp": 0.001064740809634035
+            },
+            {
+                "seed": 123,
+                "real_minus_shuffled": -0.004499684900865053,
+                "shuffled_minus_mlp": 0.0038719709866549268,
+                "real_minus_mlp": -0.0006277139142101262
+            }
+        ],
+        "std_real_minus_shuffled_f1": 0.004143798904558557,
+        "real_wins_over_shuffled": 0,
+        "shuffled_wins_over_real": 5,
+        "ties": 0,
+        "subgroup_comparison_by_original_recipient_availability": {
+            "both_endpoints_empty": {
+                "real": {
+                    "edges": 800,
+                    "label_counts": [
+                        622,
+                        178
+                    ],
+                    "std_ddof": 1,
+                    "mean_accuracy": 0.98725,
+                    "std_accuracy": 0.005108204185425655,
+                    "mean_precision": 0.9783289646298862,
+                    "std_precision": 0.009439087831366808,
+                    "mean_recall": 0.9640449438202248,
+                    "std_recall": 0.01618523628189655,
+                    "mean_f1": 0.9711009541741144,
+                    "std_f1": 0.011652134311940737
+                },
+                "shuffled": {
+                    "edges": 800,
+                    "label_counts": [
+                        622,
+                        178
+                    ],
+                    "mean_accuracy": 0.99075,
+                    "std_accuracy": 0.002091650066335191,
+                    "mean_precision": 0.9702488812865945,
+                    "std_precision": 0.004810086077564795,
+                    "mean_recall": 0.9887640449438202,
+                    "std_recall": 0.007945020013332015,
+                    "mean_f1": 0.9794023694939822,
+                    "std_f1": 0.004705534916492045
+                },
+                "mean_real_minus_shuffled_f1": -0.008301415319867833
+            },
+            "at_least_one_nonempty": {
+                "real": {
+                    "edges": 2199,
+                    "label_counts": [
+                        878,
+                        1321
+                    ],
+                    "std_ddof": 1,
+                    "mean_accuracy": 0.9688949522510232,
+                    "std_accuracy": 0.006089265572085651,
+                    "mean_precision": 0.9523966391064451,
+                    "std_precision": 0.008842348365193332,
+                    "mean_recall": 0.9981831945495836,
+                    "std_recall": 0.0011480507863817382,
+                    "mean_f1": 0.9747365602796951,
+                    "std_f1": 0.004819169176677756
+                },
+                "shuffled": {
+                    "edges": 2199,
+                    "label_counts": [
+                        878,
+                        1321
+                    ],
+                    "mean_accuracy": 0.9784447476125512,
+                    "std_accuracy": 0.0010469180930624236,
+                    "mean_precision": 0.9705920984229436,
+                    "std_precision": 0.0015077677156654266,
+                    "mean_recall": 0.9942467827403483,
+                    "std_recall": 0.0024294937980137822,
+                    "mean_f1": 0.9822743954031583,
+                    "std_f1": 0.0008779185722610586
+                },
+                "mean_real_minus_shuffled_f1": -0.007537835123463177
+            }
+        },
+        "saved_prediction_comparison_by_original_recipient_availability": [
+            {
+                "seed": 42,
+                "groups": {
+                    "both_endpoints_empty": {
+                        "edges": 800,
+                        "prediction_disagreements": 14,
+                        "real_correct_shuffled_wrong": 3,
+                        "shuffled_correct_real_wrong": 11,
+                        "both_correct": 781,
+                        "both_wrong": 5
+                    },
+                    "at_least_one_nonempty": {
+                        "edges": 2199,
+                        "prediction_disagreements": 36,
+                        "real_correct_shuffled_wrong": 9,
+                        "shuffled_correct_real_wrong": 27,
+                        "both_correct": 2127,
+                        "both_wrong": 36
+                    }
+                }
+            },
+            {
+                "seed": 7,
+                "groups": {
+                    "both_endpoints_empty": {
+                        "edges": 800,
+                        "prediction_disagreements": 11,
+                        "real_correct_shuffled_wrong": 6,
+                        "shuffled_correct_real_wrong": 5,
+                        "both_correct": 785,
+                        "both_wrong": 4
+                    },
+                    "at_least_one_nonempty": {
+                        "edges": 2199,
+                        "prediction_disagreements": 45,
+                        "real_correct_shuffled_wrong": 9,
+                        "shuffled_correct_real_wrong": 36,
+                        "both_correct": 2118,
+                        "both_wrong": 36
+                    }
+                }
+            },
+            {
+                "seed": 21,
+                "groups": {
+                    "both_endpoints_empty": {
+                        "edges": 800,
+                        "prediction_disagreements": 8,
+                        "real_correct_shuffled_wrong": 3,
+                        "shuffled_correct_real_wrong": 5,
+                        "both_correct": 788,
+                        "both_wrong": 4
+                    },
+                    "at_least_one_nonempty": {
+                        "edges": 2199,
+                        "prediction_disagreements": 69,
+                        "real_correct_shuffled_wrong": 14,
+                        "shuffled_correct_real_wrong": 55,
+                        "both_correct": 2095,
+                        "both_wrong": 35
+                    }
+                }
+            },
+            {
+                "seed": 84,
+                "groups": {
+                    "both_endpoints_empty": {
+                        "edges": 800,
+                        "prediction_disagreements": 7,
+                        "real_correct_shuffled_wrong": 4,
+                        "shuffled_correct_real_wrong": 3,
+                        "both_correct": 791,
+                        "both_wrong": 2
+                    },
+                    "at_least_one_nonempty": {
+                        "edges": 2199,
+                        "prediction_disagreements": 41,
+                        "real_correct_shuffled_wrong": 15,
+                        "shuffled_correct_real_wrong": 26,
+                        "both_correct": 2123,
+                        "both_wrong": 35
+                    }
+                }
+            },
+            {
+                "seed": 123,
+                "groups": {
+                    "both_endpoints_empty": {
+                        "edges": 800,
+                        "prediction_disagreements": 12,
+                        "real_correct_shuffled_wrong": 3,
+                        "shuffled_correct_real_wrong": 9,
+                        "both_correct": 785,
+                        "both_wrong": 3
+                    },
+                    "at_least_one_nonempty": {
+                        "edges": 2199,
+                        "prediction_disagreements": 32,
+                        "real_correct_shuffled_wrong": 12,
+                        "shuffled_correct_real_wrong": 20,
+                        "both_correct": 2131,
+                        "both_wrong": 36
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -19,3 +19,5 @@ data/processed/
 
 # Notebook temporary files
 .ipynb_checkpoints/
+
+data/raw/

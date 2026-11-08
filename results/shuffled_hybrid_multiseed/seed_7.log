@@ -1,0 +1,170 @@
+Shuffled paired-context control; real-hybrid trainer reused unchanged.
+Epoch 001 | train loss=0.698211 | val F1=0.730489 | best epoch=1
+Epoch 025 | train loss=0.260620 | val F1=0.893887 | best epoch=12
+Epoch 050 | train loss=0.203804 | val F1=0.906590 | best epoch=49
+Epoch 075 | train loss=0.146391 | val F1=0.942382 | best epoch=75
+Epoch 100 | train loss=0.111521 | val F1=0.970784 | best epoch=100
+Epoch 125 | train loss=0.089206 | val F1=0.973081 | best epoch=121
+Epoch 150 | train loss=0.078005 | val F1=0.978527 | best epoch=146
+Epoch 175 | train loss=0.071560 | val F1=0.978822 | best epoch=153
+Epoch 200 | train loss=0.066215 | val F1=0.979132 | best epoch=189
+Epoch 225 | train loss=0.063265 | val F1=0.978102 | best epoch=224
+Epoch 250 | train loss=0.060702 | val F1=0.980483 | best epoch=236
+Epoch 275 | train loss=0.058100 | val F1=0.978766 | best epoch=236
+Epoch 300 | train loss=0.076908 | val F1=0.973728 | best epoch=236
+Epoch 325 | train loss=0.077480 | val F1=0.979821 | best epoch=236
+Epoch 350 | train loss=0.066051 | val F1=0.982514 | best epoch=341
+Epoch 375 | train loss=0.061930 | val F1=0.983152 | best epoch=375
+Epoch 400 | train loss=0.059578 | val F1=0.982816 | best epoch=384
+Epoch 425 | train loss=0.057860 | val F1=0.983140 | best epoch=384
+Epoch 450 | train loss=0.056386 | val F1=0.983140 | best epoch=384
+Epoch 475 | train loss=0.054988 | val F1=0.983802 | best epoch=475
+Epoch 500 | train loss=0.053643 | val F1=0.984127 | best epoch=496
+{
+    "model": "hybrid_egraphsage",
+    "seed": 7,
+    "best_epoch": 496,
+    "best_validation_f1": 0.9844525305987429,
+    "test_accuracy": 0.9816605535178393,
+    "test_precision": 0.970664928292047,
+    "test_recall": 0.9933288859239493,
+    "test_f1": 0.9818661391361688,
+    "test_loss": 0.07507187128067017,
+    "confusion_matrix": [
+        [
+            1455,
+            45
+        ],
+        [
+            10,
+            1489
+        ]
+    ],
+    "subgroups": {
+        "both_endpoints_empty": {
+            "edges": 800,
+            "label_counts": [
+                622,
+                178
+            ],
+            "accuracy": 0.9875,
+            "precision": 0.9666666666666667,
+            "recall": 0.9775280898876404,
+            "f1": 0.9720670391061452,
+            "confusion_matrix": [
+                [
+                    616,
+                    6
+                ],
+                [
+                    4,
+                    174
+                ]
+            ]
+        },
+        "at_least_one_nonempty": {
+            "edges": 2199,
+            "label_counts": [
+                878,
+                1321
+            ],
+            "accuracy": 0.9795361527967258,
+            "precision": 0.9711964549483013,
+            "recall": 0.9954579863739591,
+            "f1": 0.983177570093458,
+            "confusion_matrix": [
+                [
+                    839,
+                    39
+                ],
+                [
+                    6,
+                    1315
+                ]
+            ]
+        }
+    },
+    "parameter_count": 3442,
+    "model_configuration": {
+        "node_feature_size": 8,
+        "edge_feature_size": 8,
+        "hidden_size": 32,
+        "classifier_hidden_size_1": 32,
+        "classifier_hidden_size_2": 16,
+        "number_of_classes": 2
+    },
+    "test_evaluations": 1,
+    "test_forward_passes": 1,
+    "restored_best_checkpoint_verified": true,
+    "best_weights_sha256": "a709a4797ff60ec19095cab6b1cbafeee262e64cb165a15afc9054bcb28c7640",
+    "graphs": {
+        "train": {
+            "nodes": 16460,
+            "edges": 13995,
+            "edge_index_shape": [
+                2,
+                13995
+            ],
+            "edge_attr_shape": [
+                13995,
+                8
+            ],
+            "edge_y_shape": [
+                13995
+            ],
+            "label_counts": [
+                6998,
+                6997
+            ]
+        },
+        "validation": {
+            "nodes": 3730,
+            "edges": 2999,
+            "edge_index_shape": [
+                2,
+                2999
+            ],
+            "edge_attr_shape": [
+                2999,
+                8
+            ],
+            "edge_y_shape": [
+                2999
+            ],
+            "label_counts": [
+                1499,
+                1500
+            ]
+        },
+        "test": {
+            "nodes": 3771,
+            "edges": 2999,
+            "edge_index_shape": [
+                2,
+                2999
+            ],
+            "edge_attr_shape": [
+                2999,
+                8
+            ],
+            "edge_y_shape": [
+                2999
+            ],
+            "label_counts": [
+                1500,
+                1499
+            ]
+        }
+    },
+    "evaluation_protocol": {
+        "target_features_directly_available": true,
+        "target_edge_features_in_aggregation": false,
+        "target_specific_endpoint_embeddings": true,
+        "labels_used_as_model_inputs": false,
+        "other_same_split_edges_in_aggregation": true,
+        "cross_split_aggregation": false,
+        "subgroup_metrics_reuse_test_logits": true,
+        "style": "batch/transductive-style, not real-time causal IDS"
+    }
+}
+Final control variant: shuffled_hybrid_egraphsage; fixed points: {'train': 0, 'validation': 0, 'test': 0}

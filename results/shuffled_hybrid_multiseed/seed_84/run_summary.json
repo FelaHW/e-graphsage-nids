@@ -1,0 +1,205 @@
+{
+    "model": "shuffled_hybrid_egraphsage",
+    "seed": 84,
+    "best_epoch": 273,
+    "best_validation_f1": 0.9820836098208361,
+    "test_accuracy": 0.9813271090363455,
+    "test_precision": 0.9718770438194899,
+    "test_recall": 0.9913275517011341,
+    "test_f1": 0.9815059445178336,
+    "test_loss": 0.08056128770112991,
+    "confusion_matrix": [
+        [
+            1457,
+            43
+        ],
+        [
+            13,
+            1486
+        ]
+    ],
+    "subgroups": {
+        "both_endpoints_empty": {
+            "edges": 800,
+            "label_counts": [
+                622,
+                178
+            ],
+            "accuracy": 0.9925,
+            "precision": 0.967391304347826,
+            "recall": 1.0,
+            "f1": 0.9834254143646409,
+            "confusion_matrix": [
+                [
+                    616,
+                    6
+                ],
+                [
+                    0,
+                    178
+                ]
+            ]
+        },
+        "at_least_one_nonempty": {
+            "edges": 2199,
+            "label_counts": [
+                878,
+                1321
+            ],
+            "accuracy": 0.977262391996362,
+            "precision": 0.9724907063197026,
+            "recall": 0.9901589704769115,
+            "f1": 0.981245311327832,
+            "confusion_matrix": [
+                [
+                    841,
+                    37
+                ],
+                [
+                    13,
+                    1308
+                ]
+            ]
+        }
+    },
+    "parameter_count": 3442,
+    "model_configuration": {
+        "node_feature_size": 8,
+        "edge_feature_size": 8,
+        "hidden_size": 32,
+        "classifier_hidden_size_1": 32,
+        "classifier_hidden_size_2": 16,
+        "number_of_classes": 2
+    },
+    "test_evaluations": 1,
+    "test_forward_passes": 1,
+    "restored_best_checkpoint_verified": true,
+    "best_weights_sha256": "69021dcbd5b2cc43a8b92b4b5a55d8aa28404f079eb1ac48755fcc1edafa612a",
+    "graphs": {
+        "train": {
+            "nodes": 16460,
+            "edges": 13995,
+            "edge_index_shape": [
+                2,
+                13995
+            ],
+            "edge_attr_shape": [
+                13995,
+                8
+            ],
+            "edge_y_shape": [
+                13995
+            ],
+            "label_counts": [
+                6998,
+                6997
+            ]
+        },
+        "validation": {
+            "nodes": 3730,
+            "edges": 2999,
+            "edge_index_shape": [
+                2,
+                2999
+            ],
+            "edge_attr_shape": [
+                2999,
+                8
+            ],
+            "edge_y_shape": [
+                2999
+            ],
+            "label_counts": [
+                1499,
+                1500
+            ]
+        },
+        "test": {
+            "nodes": 3771,
+            "edges": 2999,
+            "edge_index_shape": [
+                2,
+                2999
+            ],
+            "edge_attr_shape": [
+                2999,
+                8
+            ],
+            "edge_y_shape": [
+                2999
+            ],
+            "label_counts": [
+                1500,
+                1499
+            ]
+        }
+    },
+    "evaluation_protocol": {
+        "target_features_directly_available": true,
+        "target_specific_endpoint_embeddings": true,
+        "labels_used_as_model_inputs": false,
+        "other_same_split_edges_in_aggregation": true,
+        "cross_split_aggregation": false,
+        "subgroup_metrics_reuse_test_logits": true,
+        "style": "batch/transductive-style, not real-time causal IDS",
+        "context_source_and_destination_shuffled_together": true,
+        "direct_target_features_shuffled": false,
+        "labels_shuffled": false,
+        "donor_context_excludes_its_original_target": true,
+        "recipient_explicitly_removed_from_donor_context": false,
+        "fixed_context_assignment_across_epochs": true,
+        "subgroups_use_original_recipient_context_availability": true
+    },
+    "permutations": {
+        "train": {
+            "edges": 13995,
+            "permutation_seed": 7552288690412351916,
+            "fixed_points": 0,
+            "permutation_sha256": "9f158a727576dd338d9a48a8882d7fe45eac051409d5b040f75ade6fd7de0fe7",
+            "original_both_empty": 3342,
+            "assigned_both_empty": 3342,
+            "availability_transitions": {
+                "empty_to_empty": 816,
+                "empty_to_nonempty": 2526,
+                "nonempty_to_empty": 2526,
+                "nonempty_to_nonempty": 8127
+            },
+            "recipient_shares_endpoint_with_donor": 89
+        },
+        "validation": {
+            "edges": 2999,
+            "permutation_seed": 6487020181456836332,
+            "fixed_points": 0,
+            "permutation_sha256": "793e7103942d213b7aa6456e063cfb78218d25793660ab6b746fe44338bf14dd",
+            "original_both_empty": 766,
+            "assigned_both_empty": 766,
+            "availability_transitions": {
+                "empty_to_empty": 197,
+                "empty_to_nonempty": 569,
+                "nonempty_to_empty": 569,
+                "nonempty_to_nonempty": 1664
+            },
+            "recipient_shares_endpoint_with_donor": 17
+        },
+        "test": {
+            "edges": 2999,
+            "permutation_seed": 5216942351263212336,
+            "fixed_points": 0,
+            "permutation_sha256": "77a4fd141db674a8f9985f0323a53d7423278310af509cbc33493847609e6049",
+            "original_both_empty": 800,
+            "assigned_both_empty": 800,
+            "availability_transitions": {
+                "empty_to_empty": 228,
+                "empty_to_nonempty": 572,
+                "nonempty_to_empty": 572,
+                "nonempty_to_nonempty": 1627
+            },
+            "recipient_shares_endpoint_with_donor": 19
+        }
+    },
+    "fixed_points": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+    }
+}

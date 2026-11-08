@@ -24,15 +24,12 @@ def main() -> None:
     print("Loaded flow table:")
     print(flows)
 
-    # shape returns:
-    # (number of rows, number of columns)
     print("\nTable shape:")
     print(flows.shape)
 
     print("\nColumn names:")
     print(flows.columns.tolist())
 
-    # Count how many examples exist for every label.
     print("\nLabel counts:")
     print(
         flows["label"]

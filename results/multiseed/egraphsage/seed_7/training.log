@@ -1,0 +1,44 @@
+Device: cpu
+Training label counts [benign, attack]: [6998, 6997]
+Batch aggregation includes the target edge and other same-split flows.
+Trainable parameters: 674
+Epoch 001 | train loss=0.6833 | val loss=0.6380 | val F1=0.7309 | best epoch=1
+Epoch 025 | train loss=0.1794 | val loss=0.2042 | val F1=0.9459 | best epoch=25
+Epoch 050 | train loss=0.1225 | val loss=0.1592 | val F1=0.9653 | best epoch=50
+Epoch 075 | train loss=0.0923 | val loss=0.1274 | val F1=0.9695 | best epoch=62
+Epoch 100 | train loss=0.0780 | val loss=0.1099 | val F1=0.9710 | best epoch=96
+Epoch 125 | train loss=0.0692 | val loss=0.0955 | val F1=0.9752 | best epoch=125
+Epoch 150 | train loss=0.0631 | val loss=0.0810 | val F1=0.9774 | best epoch=148
+Epoch 175 | train loss=0.0591 | val loss=0.0723 | val F1=0.9810 | best epoch=175
+Epoch 200 | train loss=0.0564 | val loss=0.0684 | val F1=0.9839 | best epoch=191
+Epoch 225 | train loss=0.0543 | val loss=0.0656 | val F1=0.9845 | best epoch=212
+Epoch 250 | train loss=0.0524 | val loss=0.0637 | val F1=0.9855 | best epoch=243
+Epoch 275 | train loss=0.0508 | val loss=0.0622 | val F1=0.9848 | best epoch=243
+Epoch 300 | train loss=0.0493 | val loss=0.0601 | val F1=0.9855 | best epoch=243
+Epoch 325 | train loss=0.0478 | val loss=0.0590 | val F1=0.9848 | best epoch=243
+Epoch 350 | train loss=0.0467 | val loss=0.0579 | val F1=0.9852 | best epoch=243
+Epoch 375 | train loss=0.0457 | val loss=0.0569 | val F1=0.9858 | best epoch=243
+Epoch 400 | train loss=0.0449 | val loss=0.0559 | val F1=0.9858 | best epoch=243
+Epoch 425 | train loss=0.0442 | val loss=0.0552 | val F1=0.9858 | best epoch=243
+Epoch 450 | train loss=0.0436 | val loss=0.0548 | val F1=0.9868 | best epoch=436
+Epoch 475 | train loss=0.0430 | val loss=0.0546 | val F1=0.9865 | best epoch=436
+Epoch 500 | train loss=0.0426 | val loss=0.0544 | val F1=0.9868 | best epoch=436
+
+Best epoch: 436
+Best validation F1: 0.986799
+
+Test results (best-validation checkpoint, evaluated once)
+Accuracy: 0.981994
+Precision: 0.965828
+Recall: 0.999333
+F1: 0.982295
+Confusion matrix: [[1447, 53], [1, 1498]]
+
+MLP baseline: F1 = 0.9767
+E-GraphSAGE: F1 = 0.982295
+Difference (E-GraphSAGE - MLP): +0.005595
+This run exceeds the MLP F1; an ablation is needed to isolate graph benefit.
+
+Saved checkpoint: /mnt/d/Felix_proj/for_git/e-graphsage-nids/results/multiseed/egraphsage/seed_7/checkpoint.pt
+Saved metrics: /mnt/d/Felix_proj/for_git/e-graphsage-nids/results/multiseed/egraphsage/seed_7/trainer_metrics.json
+Saved training history: /mnt/d/Felix_proj/for_git/e-graphsage-nids/results/multiseed/egraphsage/seed_7/training_history.json

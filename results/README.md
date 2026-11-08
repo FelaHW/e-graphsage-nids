@@ -1,6 +1,7 @@
 # NF-UNSW-NB15 evaluation checkpoint
 
-Verified on 2026-11-08. Real E-GraphSAGE training has not started.
+Clean-split and graph-builder checkpoint verified on 2026-11-08. The first
+E-GraphSAGE-style experiment is recorded in [egraphsage_experiment.md](egraphsage_experiment.md).
 
 ## Duplicate investigation
 

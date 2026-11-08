@@ -1,0 +1,52 @@
+Device: cpu
+
+Dataset sizes:
+Train:      13,995
+Validation: 2,999
+Test:       2,999
+Epoch 01 | train loss=0.6188 | val loss=0.5269 | val acc=0.8596 | val F1=0.8589
+Epoch 02 | train loss=0.4192 | val loss=0.3121 | val acc=0.8926 | val F1=0.8972
+Epoch 03 | train loss=0.2589 | val loss=0.2285 | val acc=0.9043 | val F1=0.9091
+Epoch 04 | train loss=0.2104 | val loss=0.2039 | val acc=0.9150 | val F1=0.9196
+Epoch 05 | train loss=0.1909 | val loss=0.1880 | val acc=0.9190 | val F1=0.9232
+Epoch 06 | train loss=0.1782 | val loss=0.1746 | val acc=0.9316 | val F1=0.9338
+Epoch 07 | train loss=0.1661 | val loss=0.1635 | val acc=0.9360 | val F1=0.9385
+Epoch 08 | train loss=0.1565 | val loss=0.1533 | val acc=0.9460 | val F1=0.9475
+Epoch 09 | train loss=0.1476 | val loss=0.1455 | val acc=0.9627 | val F1=0.9628
+Epoch 10 | train loss=0.1405 | val loss=0.1378 | val acc=0.9653 | val F1=0.9656
+Epoch 11 | train loss=0.1348 | val loss=0.1328 | val acc=0.9673 | val F1=0.9677
+Epoch 12 | train loss=0.1290 | val loss=0.1263 | val acc=0.9703 | val F1=0.9706
+Epoch 13 | train loss=0.1245 | val loss=0.1237 | val acc=0.9707 | val F1=0.9710
+Epoch 14 | train loss=0.1203 | val loss=0.1181 | val acc=0.9713 | val F1=0.9716
+Epoch 15 | train loss=0.1165 | val loss=0.1141 | val acc=0.9727 | val F1=0.9729
+Epoch 16 | train loss=0.1129 | val loss=0.1110 | val acc=0.9720 | val F1=0.9722
+Epoch 17 | train loss=0.1089 | val loss=0.1069 | val acc=0.9730 | val F1=0.9733
+Epoch 18 | train loss=0.1070 | val loss=0.1058 | val acc=0.9723 | val F1=0.9726
+Epoch 19 | train loss=0.1035 | val loss=0.1015 | val acc=0.9740 | val F1=0.9743
+Epoch 20 | train loss=0.1004 | val loss=0.0984 | val acc=0.9747 | val F1=0.9750
+Epoch 21 | train loss=0.0978 | val loss=0.0968 | val acc=0.9760 | val F1=0.9763
+Epoch 22 | train loss=0.0954 | val loss=0.0942 | val acc=0.9767 | val F1=0.9769
+Epoch 23 | train loss=0.0934 | val loss=0.0917 | val acc=0.9763 | val F1=0.9766
+Epoch 24 | train loss=0.0906 | val loss=0.0905 | val acc=0.9763 | val F1=0.9766
+Epoch 25 | train loss=0.0889 | val loss=0.0877 | val acc=0.9793 | val F1=0.9796
+Epoch 26 | train loss=0.0868 | val loss=0.0863 | val acc=0.9767 | val F1=0.9769
+Epoch 27 | train loss=0.0858 | val loss=0.0840 | val acc=0.9803 | val F1=0.9806
+Epoch 28 | train loss=0.0839 | val loss=0.0836 | val acc=0.9780 | val F1=0.9782
+Epoch 29 | train loss=0.0817 | val loss=0.0811 | val acc=0.9793 | val F1=0.9795
+Epoch 30 | train loss=0.0798 | val loss=0.0812 | val acc=0.9780 | val F1=0.9781
+
+Loading best model...
+
+Test results
+------------
+Accuracy:  0.9763
+Precision: 0.9595
+Recall:    0.9947
+F1-score:  0.9767
+
+Confusion matrix:
+[[1437, 63], [8, 1491]]
+
+Saved:
+/mnt/d/Felix_proj/for_git/e-graphsage-nids/results/multiseed/mlp/seed_42/checkpoint.pt
+/mnt/d/Felix_proj/for_git/e-graphsage-nids/results/multiseed/mlp/seed_42/trainer_metrics.json
