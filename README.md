@@ -289,3 +289,4 @@ experiments, ablation studies, leakage investigation, and unit testing.
 Future work could use endpoint-disjoint and temporal splits, streaming evaluation
 with only previously observed context, alternative GraphSAGE/message-passing
 aggregation, larger or full-dataset experiments, and capacity-matched baselines.
+# e-graphsage-nids
