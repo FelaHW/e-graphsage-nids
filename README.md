@@ -290,3 +290,4 @@ Future work could use endpoint-disjoint and temporal splits, streaming evaluatio
 with only previously observed context, alternative GraphSAGE/message-passing
 aggregation, larger or full-dataset experiments, and capacity-matched baselines.
 # e-graphsage-nids
+# e-graphsage-nids
