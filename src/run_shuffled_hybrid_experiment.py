@@ -234,6 +234,7 @@ def main() -> None:
         raise ValueError("Historical seeds do not match shuffled-control seeds.")
     protected_paths = list((PROJECT_ROOT / "src").glob("*.py"))
     protected_paths += list((PROJECT_ROOT / "tests").glob("*.py"))
+    protected_paths += list((PROJECT_ROOT / "examples").rglob("*.py"))
     protected_paths += [path for path in (PROJECT_ROOT / "results").rglob("*") if path.is_file()]
     protected_paths += [path for path in (PROJECT_ROOT / "data/processed").rglob("*") if path.is_file()]
     protected_hashes = file_hashes(protected_paths)

@@ -14,6 +14,8 @@ from torch import nn
 from torch_geometric.data import Data
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+# Keep the educational reference available after separating it from src/.
+sys.path.insert(1, str(Path(__file__).resolve().parents[1] / "examples" / "toy_egraphsage"))
 
 from egraphsage_model import EGraphSAGE, aggregate_connected_edges
 from toy_egraphsage import aggregate_connected_edges as toy_aggregation

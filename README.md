@@ -164,10 +164,15 @@ contexts, including both incidences of a self-loop.
 
 ```text
 .
-├── src/                # Data preparation, graph builders, models, training runners
+├── src/                # 14 active data, graph, model, and experiment modules
 ├── tests/              # Aggregation, model, and evaluation-protocol checks
+├── examples/           # Toy progression, optional inspection, historical archive
 ├── results/            # Experiment reports, metrics, and training histories
-├── data/               # Toy example plus local raw and processed datasets
+├── data/
+│   ├── README.md       # Dataset placement, provenance, and checksums
+│   ├── toy_flows.csv   # Intentionally tracked educational fixture
+│   ├── raw/            # Local raw datasets (ignored)
+│   └── processed/      # Generated samples and splits (ignored)
 ├── requirements.txt    # Recorded Python environment
 └── README.md
 ```
@@ -175,6 +180,10 @@ contexts, including both incidences of a self-loop.
 Raw NF-UNSW-NB15 data, generated processed CSVs, and model checkpoint binaries are
 excluded from Git. The reports and saved JSON metrics document the experiments
 without requiring those binaries.
+
+See [examples/README.md](examples/README.md) for the educational progression and
+historical archive, and [data/README.md](data/README.md) for dataset placement and
+provenance. The active research commands below remain in `src/`.
 
 ## Reproduction
 
