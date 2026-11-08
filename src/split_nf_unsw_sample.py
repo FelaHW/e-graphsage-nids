@@ -1,7 +1,8 @@
 """Split the NF-UNSW-NB15 working sample.
 
-The split is stratified by the binary Label column, so each subset
-keeps the same benign/attack ratio.
+Exact complete-row duplicates are removed before splitting, so copies
+of the same flow cannot appear in different subsets. The split is then
+stratified by the binary Label column to preserve the class ratio.
 
 Result:
 
@@ -71,6 +72,16 @@ def main() -> None:
 
     flows = pd.read_csv(SAMPLE_PATH)
 
+    # Compare every column, not just the eight model features. Different
+    # flows may legitimately have identical feature vectors.
+    number_of_original_flows = len(flows)
+    flows = flows.drop_duplicates().reset_index(drop=True)
+    print(
+        "Removed exact duplicate copies: "
+        f"{number_of_original_flows - len(flows):,}"
+    )
+    print(f"Unique flows available for splitting: {len(flows):,}")
+
     # First split:
     # 70% training and 30% temporary data.
     train_flows, temporary_flows = train_test_split(
@@ -94,7 +105,7 @@ def main() -> None:
     validation_flows = validation_flows.reset_index(drop=True)
     test_flows = test_flows.reset_index(drop=True)
 
-    # Confirm that every original row appears in exactly one split.
+    # Confirm that every deduplicated row appears in exactly one split.
     assert (
         len(train_flows)
         + len(validation_flows)
@@ -102,26 +113,20 @@ def main() -> None:
         == len(flows)
     )
 
-    # Expected sizes for a dataset containing 20,000 rows.
-    assert len(train_flows) == 14_000
-    assert len(validation_flows) == 3_000
-    assert len(test_flows) == 3_000
+    # Checking the combined table catches duplicates both within a split
+    # and across any pair of splits, including validation/test.
+    combined_splits = pd.concat(
+        [train_flows, validation_flows, test_flows],
+        ignore_index=True,
+    )
+    assert not combined_splits.duplicated().any()
 
-    # Confirm that each split remains balanced.
-    assert train_flows["Label"].value_counts().to_dict() == {
-        0: 7_000,
-        1: 7_000,
-    }
-
-    assert validation_flows["Label"].value_counts().to_dict() == {
-        0: 1_500,
-        1: 1_500,
-    }
-
-    assert test_flows["Label"].value_counts().to_dict() == {
-        0: 1_500,
-        1: 1_500,
-    }
+    # Removing seven duplicate copies slightly changes the old 20k sizes.
+    # With this nearly balanced sample, each split should differ by at
+    # most one flow between the two classes.
+    for split in (train_flows, validation_flows, test_flows):
+        label_counts = split["Label"].value_counts().reindex([0, 1], fill_value=0)
+        assert abs(int(label_counts[0]) - int(label_counts[1])) <= 1
 
     OUTPUT_DIRECTORY.mkdir(
         parents=True,
